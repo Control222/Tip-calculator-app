@@ -1,0 +1,247 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --STRONGCYAN: hsl(172, 67%, 45%);
+
+  --VERYDARKCYAN: hsl(183, 100%, 15%);
+  --DARKGRAYISHCYAN: hsl(186, 14%, 43%);
+  --GRAYISHCYAN: hsl(184, 14%, 56%);
+  --LIGHTGRAYISHCYAN: hsl(185, 41%, 84%);
+  --VERYLIGHTGRAYISHCYAN: hsl(189, 41%, 97%);
+  --WHITE: hsl(0, 0%, 100%);
+}
+
+body {
+  font-family: 'Space Mono', monospace;
+  background-color: var(--LIGHTGRAYISHCYAN);
+  height: 100vh;
+}
+
+#logo {
+  display: block;
+  margin: 3rem auto;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+
+  padding: 2rem;
+  background-color: var(--WHITE);
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  margin-top: 3rem;
+}
+
+.calcul label {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--DARKGRAYISHCYAN);
+}
+
+form input:hover {
+  border: 2px solid var(--STRONGCYAN);
+}
+
+form .input__gen {
+  border: none;
+  border-radius: 5px;
+  background-color: var(--VERYLIGHTGRAYISHCYAN);
+  color: var(--VERYDARKCYAN);
+  padding: 5px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-align: right;
+  margin-top: 0.5rem;
+  font-family: 'Space Mono', monospace;
+}
+
+form #bill__input {
+  background-image: url(/images/icon-dollar.svg);
+  background-repeat: no-repeat;
+  background-position: center left;
+}
+
+form #people__input {
+  background-image: url(/images/icon-person.svg);
+  background-repeat: no-repeat;
+  background-position: center left;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.price {
+  margin-bottom: 2rem;
+}
+
+.num__people {
+  margin-bottom: 2rem;
+}
+
+label {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* RED SPAN ERROR */
+
+label span {
+  display: none;
+}
+
+/* WHEN VALUE = 0 */
+
+label span.error {
+  display: inline;
+  color: red;
+}
+
+#people__input.error {
+  border: 2px solid red;
+}
+
+/* TIP OPTION */
+
+.percentage__option {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.percentage__option button,
+.percentage__option input {
+  border: none;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 1.4rem;
+  width: 100%;
+  padding: 0.5rem;
+  cursor: pointer;
+  font-family: 'Space Mono', monospace;
+}
+
+.percentage__option button {
+  background-color: var(--VERYDARKCYAN);
+  color: var(--WHITE);
+}
+
+.percentage__option button:hover {
+  background-color: var(--LIGHTGRAYISHCYAN);
+  color: var(--VERYDARKCYAN);
+}
+
+.percentage__option button:focus {
+  background-color: var(--STRONGCYAN);
+}
+
+.percentage__option input {
+  text-align: center;
+  background-color: var(--VERYLIGHTGRAYISHCYAN);
+  color: var(--DARKGRAYISHCYAN);
+}
+
+/* RESULT SECTION */
+
+.result {
+  background-color: var(--VERYDARKCYAN);
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.result div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.result .text {
+  display: flex;
+  flex-direction: column;
+}
+
+.text .description {
+  color: var(--LIGHTGRAYISHCYAN);
+  font-weight: 700;
+}
+
+.text p:not(.description) {
+  color: var(--DARKGRAYISHCYAN);
+}
+
+.result .tip__person,
+.result .total__person {
+  color: var(--STRONGCYAN);
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.tip__amount {
+  margin-top: 1.5rem;
+}
+
+.bill__total {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.btn__reset {
+  border: none;
+  border-radius: 5px;
+  background-color: var(--STRONGCYAN);
+  width: 100%;
+  padding: 1rem;
+  font-family: 'Space Mono', 'Courier New', monospace;
+  font-weight: 700;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: var(--VERYDARKCYAN);
+}
+
+.btn__reset:hover {
+  background-color: var(--LIGHTGRAYISHCYAN);
+}
+
+/* MEDIA QUERIES */
+
+@media (min-width: 768px) {
+  main {
+    flex-direction: row;
+    gap: 3rem;
+    max-width: 1000px;
+    margin: 3rem auto;
+  }
+
+  main section {
+    flex-basis: 47%;
+  }
+
+  .percentage__option {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .num__people {
+    margin-bottom: 0;
+  }
+
+  .result {
+    padding: 2rem;
+  }
+
+  .btn__reset {
+    margin-top: 6rem;
+    padding: 0.5rem;
+  }
+}

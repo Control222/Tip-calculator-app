@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="main.js" defer></script>
+
+    <title>Frontend Mentor | Tip calculator app</title>
+  </head>
+  <body>
+    <img src="images/logo.svg" alt="logo" id="logo" />
+
+    <main>
+      <section class="calcul">
+        <!-- Bill -->
+
+        <form class="price flex">
+          <label for="bill">Bill</label>
+          <input
+            type="number"
+            class="input__gen"
+            id="bill__input"
+            placeholder="0"
+          />
+        </form>
+
+        <!-- Buttons Tip -->
+
+        <form class="select__tip">
+          <label>Select Tip %</label>
+          <div class="percentage__option">
+            <button type="button" class="tip__btn" value="5">5%</button>
+            <button type="button" class="tip__btn" value="10">10%</button>
+            <button type="button" class="tip__btn" value="15">15%</button>
+            <button type="button" class="tip__btn" value="25">25%</button>
+            <button type="button" class="tip__btn" value="50">50%</button>
+            <input type="number" id="custom__tip__input" placeholder="Custom" />
+          </div>
+        </form>
+
+        <!-- Numbers of people -->
+        <form class="num__people flex">
+          <label for="people__input"
+            >Number of People <span>Can't be zero</span></label
+          >
+          <input
+            type="number"
+            class="input__gen"
+            id="people__input"
+            min="1"
+            max="100"
+            placeholder="1"
+          />
+        </form>
+      </section>
+
+      <section class="result">
+        <div class="tip__amount">
+          <div class="text">
+            <p class="description">Tip Amount</p>
+            <p>/ person</p>
+          </div>
+          <div class="total result__tip__person">
+            <p class="tip__person">$0.00</p>
+          </div>
+        </div>
+
+        <div class="bill__total">
+          <div class="text">
+            <p class="description">Total</p>
+            <p>/ person</p>
+          </div>
+          <div class="total result__bill__person">
+            <p class="total__person">$0.00</p>
+          </div>
+        </div>
+        <button class="btn__reset">reset</button>
+      </section>
+    </main>
+  </body>
+</html>
